@@ -15,8 +15,8 @@ module.exports = (env) ->
       deviceConfigDef = require("./device-config-schema")
 
       @framework.deviceManager.registerDeviceClass("Ultrasonic", {
-        configDef: deviceConfigDef.Ultrasonic, 
-        createCallback: (config) => 
+        configDef: deviceConfigDef.Ultrasonic,
+        createCallback: (config) ->
           device = new Ultrasonic(config)
           return device
       })
@@ -51,8 +51,8 @@ module.exports = (env) ->
       setInterval( ( => @requestValue() ), @config.interval)
 
     requestValue: ->
-      sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample);
-      distance = parseInt(sensor().toFixed(2), 10);
+      sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample)
+      distance = parseInt(sensor().toFixed(2), 10)
       @emit "distance", distance
 
     getDistance: -> Promise.resolve(@distance)
