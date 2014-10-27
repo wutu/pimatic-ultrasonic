@@ -1,0 +1,34 @@
+{
+  "name": "pimatic-ultrasonic",
+  "description": "pimatic plugin for displaying ultrasonic HC-SR04 sensor.",
+  "author": "wutu",
+  "main": "ultrasonic",
+  "files": [
+    "ultrasonic.coffee",
+    "README.md",
+    "ultrasonic-config-schema.coffee",
+    "device-config-schema.coffee"
+  ],
+  "version": "0.8.1",
+  "homepage": "https://github.com/wutu/pimatic-ultrasonic",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wutu/pimatic-ultrasonic.git"
+  },
+  "configSchema": "ultrasonic-config-schema.coffee",
+  "keywords": [
+    "pimatic",
+    "devices",
+    "ultrasonic"
+  ],
+  "dependencies": {},
+  "peerDependencies": {
+    "pimatic": "0.8.*",
+    "r-pi-usonic": "r-pi-usonic"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  }
+}
