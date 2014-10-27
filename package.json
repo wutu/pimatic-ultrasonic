@@ -1,0 +1,45 @@
+{
+  "name": "pimatic-ultrasonic",
+  "description": "Support for the HC-SR04 ultrasonic sensor.",
+  "author_name": "Marek Kail <reg@kail.cz>",
+  "author_url": "https://github.com/wutu",
+  "npmUser": "wutu",
+  "main": "ultrasonic",
+  "files": [
+    "ultrasonic.coffee",
+    "README.md",
+    "ultrasonic-config-schema.coffee",
+    "device-config-schema.coffee"
+  ],
+  "version": "0.8.1",
+  "homepage": "http://github.com/wutu/pimatic-ultrasonic",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wutu/pimatic-ultrasonic.git"
+  },
+  "configSchema": "ultrasonic-config-schema.coffee",
+  "dependencies": {
+    "r-pi-usonic": "~2.3.1"
+  },
+  "peerDependencies": {
+    "pimatic": "0.8.*"
+  },
+  "engines": {
+    "node": ">0.8.x",
+    "npm": ">1.1.x"
+  },
+  "bugs": {
+    "url": "https://github.com/wutu/pimatic-ultrasonic/issues"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pimatic",
+    "ultrasonic",
+    "sensor",
+    "hc-sr04"
+  ],
+  "license": "GPL-2.0"
+}
