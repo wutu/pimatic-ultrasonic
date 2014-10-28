@@ -41,19 +41,16 @@ module.exports = (env) ->
       @interval = config.interval
       super()
 
-#      @requestValue()
-#      setInterval( =>
-#        @requestValue()
-#      , @timeout
-#      )
-
       @requestValue()
       setInterval( ( => @requestValue() ), @config.interval)
 
     requestValue: ->
       sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample)
       distance = parseInt(sensor().toFixed(2), 10)
-      @emit "distance", distance
+      if distance < 0
+          env.logger.error("Error reading #{@config.name} with id:#{@config.id}")
+      else
+          @emit "distance", distance
 
     getDistance: -> Promise.resolve(@distance)
 
