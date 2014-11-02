@@ -12,20 +12,23 @@ module.exports = {
         description: "Trigger pin"
         type: "number"
       timeout:
-        interval: "Measurement timeout in µs"
+        description: "Measurement timeout in µs"
         type: "number"
         default: 750
       delay:
-        interval: "Measurement delay in ms"
+        description: "Measurement delay in ms"
         type: "number"
         default: 60
       sample:
-        interval: "Measurements per sample"
+        description: "Measurements per sample"
         type: "number"
         default: 5
       interval:
-        interval: "Interval in ms so read the sensor"
+        description: "Interval in ms so read the sensor"
         type: "integer"
         default: 60000
+      displayUnit:
+        description: "The unit of the attribute"
+        type: "string"
   }
 }
