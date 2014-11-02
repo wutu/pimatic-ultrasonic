@@ -29,7 +29,7 @@ module.exports = (env) ->
       distance:
         description: "The messured distance"
         type: "number"
-        unit: 'cm'
+        unit: 'm'
 
     constructor: (@config) ->
       @id = config.id
@@ -47,7 +47,7 @@ module.exports = (env) ->
 
     requestValue: ->
       sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample)
-      @_distance = parseInt(sensor().toFixed(2), 10)
+      @_distance = (sensor() / 100)
       if @_distance < 0
         env.logger.error("Error reading #{@config.name} with id:#{@config.id}")
       else
