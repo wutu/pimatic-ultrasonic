@@ -24,6 +24,7 @@ module.exports = (env) ->
 
   class Ultrasonic extends env.devices.Device
     distance: null
+
     attributes:
       distance:
         description: "The messured distance"
@@ -46,13 +47,13 @@ module.exports = (env) ->
 
     requestValue: ->
       sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample)
-      distance = parseInt(sensor().toFixed(2), 10)
-      if distance < 0
-          env.logger.error("Error reading #{@config.name} with id:#{@config.id}")
+      @_distance = parseInt(sensor().toFixed(2), 10)
+      if @_distance < 0
+        env.logger.error("Error reading #{@config.name} with id:#{@config.id}")
       else
-          @emit "distance", distance
+        @emit "distance", @_distance
 
-    getDistance: -> Promise.resolve(@distance)
+    getDistance: -> Promise.resolve(@_distance)
 
   plugin = new UltrasonicPlugin
 
