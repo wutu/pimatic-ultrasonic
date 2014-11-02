@@ -30,5 +30,6 @@ module.exports = {
       displayUnit:
         description: "The unit of the attribute"
         type: "string"
+        default: ""
   }
 }
