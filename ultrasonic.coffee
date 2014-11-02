@@ -5,6 +5,8 @@ module.exports = (env) ->
 
   # Require the [cassert library](https://github.com/rhoot/cassert).
   assert = env.require 'cassert'
+  
+  _ = env.require 'lodash'
 
   usonic = require 'r-pi-usonic'
   Promise.promisifyAll(usonic)
@@ -40,6 +42,10 @@ module.exports = (env) ->
       @delay = config.delay
       @sample = config.sample
       @interval = config.interval
+      if config.displayUnit?
+        # only change the attributes for this device:
+        @attributes = _.cloneDeep(@attributes)
+        @attributes.distance.displayUnit = config.displayUnit
       super()
 
       @requestValue()
