@@ -28,5 +28,8 @@ Then add a sensor for your device to the devices section:
   "interval": 60000
 }
 ```
+You can also select the unit:
+
+example: "displayUnit": "cm"
 
 Thank you <a href="https://github.com/clebert">Clemens Akens</a> for <a href="https://github.com/clebert/r-pi-usonic">r-pi-usonic</a> and <a href="https://github.com/sweetpi">sweet pi</a> for inspiration and his work on best automatization software <a href="http://pimatic.org/">Pimatic</a>.
