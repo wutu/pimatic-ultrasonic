@@ -19,7 +19,7 @@
   },
   "configSchema": "ultrasonic-config-schema.coffee",
   "dependencies": {
-    "r-pi-usonic": "~2.3.1"
+    "r-pi-usonic": "~2.5.0"
   },
   "peerDependencies": {
     "pimatic": "0.8.*"
