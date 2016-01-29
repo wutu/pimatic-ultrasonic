@@ -1,15 +1,9 @@
 module.exports = (env) ->
 
-  # Require the  bluebird promise library
   Promise = env.require 'bluebird'
-
-  # Require the [cassert library](https://github.com/rhoot/cassert).
   assert = env.require 'cassert'
-  
   _ = env.require 'lodash'
-
   usonic = require 'r-pi-usonic'
-  Promise.promisifyAll(usonic)
 
 
   class UltrasonicPlugin extends env.plugins.Plugin
@@ -33,6 +27,13 @@ module.exports = (env) ->
         type: "number"
         unit: 'm'
 
+    usonic.init (error) ->
+      if error
+        env.logger.error("Error init HC-SR04 ultrasonic sensor")
+      else
+        env.logger.info("Init HC-SR04 ultrasonic sensor")
+      return
+
     constructor: (@config) ->
       @id = config.id
       @name = config.name
@@ -52,7 +53,7 @@ module.exports = (env) ->
       setInterval( ( => @requestValue() ), @config.interval)
 
     requestValue: ->
-      sensor = usonic.sensor(@echo, @trigger, @timeout, @delay, @sample)
+      sensor = usonic.createSensor(@echo, @trigger, @timeout, @delay, @sample)
       @_distance = (sensor() / 100)
       if @_distance < 0
         env.logger.error("Error reading #{@config.name} with id:#{@config.id}")

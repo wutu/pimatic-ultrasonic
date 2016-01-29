@@ -11,7 +11,7 @@
     "ultrasonic-config-schema.coffee",
     "device-config-schema.coffee"
   ],
-  "version": "0.8.5",
+  "version": "0.8.6",
   "homepage": "http://github.com/wutu/pimatic-ultrasonic",
   "repository": {
     "type": "git",
@@ -41,5 +41,11 @@
     "sensor",
     "hc-sr04"
   ],
-  "license": "GPL-2.0"
+  "license": "GPL-2.0",
+  "readme": "pimatic-ultrasonic\n================\n\nSupport for the HC-SR04 ultrasonic sensor.\n\n### Example config\n\nAdd the plugin to the plugin section:\n\n```json\n{ \n  \"plugin\": \"ultrasonic\"\n}\n```\n\nThen add a sensor for your device to the devices section:\n\n```json\n{\n  \"id\": \"ultrasonic\",\n  \"name\": \"Ultrasonic HC-SR04\",\n  \"class\": \"Ultrasonic\",\n  \"echo\": 22,\n  \"trigger\": 18,\n  \"timeout\": 750,\n  \"delay\": 60,\n  \"sample\": 5,\n  \"interval\": 60000\n}\n```\nYou can also select the unit:\n\nexample: \"displayUnit\": \"cm\"\n\nThank you <a href=\"https://github.com/clebert\">Clemens Akens</a> for <a href=\"https://github.com/clebert/r-pi-usonic\">r-pi-usonic</a> and <a href=\"https://github.com/sweetpi\">sweet pi</a> for inspiration and his work on best automatization software <a href=\"http://pimatic.org/\">Pimatic</a>.",
+  "readmeFilename": "README.md",
+  "gitHead": "d30c91633965ab24a5978d9623cf7a46e6c2aef7",
+  "_id": "pimatic-ultrasonic@0.8.4",
+  "_shasum": "c472540dc5440282c76c3fa6265d6bc8152096aa",
+  "_from": "pimatic-ultrasonic@*"
 }
