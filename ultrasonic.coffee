@@ -35,18 +35,18 @@ module.exports = (env) ->
       return
 
     constructor: (@config) ->
-      @id = config.id
-      @name = config.name
-      @echo = config.echo
-      @trigger = config.trigger
-      @timeout = config.timeout
-      @delay = config.delay
-      @sample = config.sample
-      @interval = config.interval
-      if config.displayUnit?
+      @id = @config.id
+      @name = @config.name
+      @echo = @config.echo
+      @trigger = @config.trigger
+      @timeout = @config.timeout
+      @delay = @config.delay
+      @sample = @config.sample
+      @interval = @config.interval
+      if @config.displayUnit?
         # only change the attributes for this device:
         @attributes = _.cloneDeep(@attributes)
-        @attributes.distance.displayUnit = config.displayUnit
+        @attributes.distance.displayUnit = @config.displayUnit
       super()
 
       @requestValue()
