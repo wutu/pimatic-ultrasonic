@@ -33,4 +33,4 @@ example: "displayUnit": "cm"
 
 ### Credits
 
-<a href="https://github.com/mochman">Luke/a> for <a href="https://github.com/mochman/mmm-usonic">mmm-usonic</a>
+<a href="https://github.com/mochman">Luke</a> for <a href="https://github.com/mochman/mmm-usonic">mmm-usonic</a>
