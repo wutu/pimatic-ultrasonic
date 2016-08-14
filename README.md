@@ -1,7 +1,9 @@
 pimatic-ultrasonic
 ================
 
-Support for the HC-SR04 ultrasonic sensor.
+<a href="https://pimatic.org">Pimatic</a> support for the HC-SR04 ultrasonic sensor.
+
+<a href="https://github.com/mochman/mmm-usonic#example">Exapmle wiring</a>
 
 ### Example config
 
@@ -22,14 +24,13 @@ Then add a sensor for your device to the devices section:
   "class": "Ultrasonic",
   "echo": 22,
   "trigger": 18,
-  "timeout": 750,
-  "delay": 60,
-  "sample": 5,
-  "interval": 60000
+  "timeout": 750
 }
 ```
 You can also select the unit:
 
 example: "displayUnit": "cm"
 
-Thank you <a href="https://github.com/clebert">Clemens Akens</a> for <a href="https://github.com/clebert/r-pi-usonic">r-pi-usonic</a> and <a href="https://github.com/sweetpi">sweet pi</a> for inspiration and his work on best automatization software <a href="http://pimatic.org/">Pimatic</a>.
+### Credits
+
+<a href="https://github.com/mochman">Luke/a> for <a href="https://github.com/mochman/mmm-usonic">mmm-usonic</a>

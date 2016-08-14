@@ -15,14 +15,6 @@ module.exports = {
         description: "Measurement timeout in µs"
         type: "number"
         default: 750
-      delay:
-        description: "Measurement delay in ms"
-        type: "number"
-        default: 60
-      sample:
-        description: "Measurements per sample"
-        type: "number"
-        default: 5
       interval:
         description: "Interval in ms so read the sensor"
         type: "integer"

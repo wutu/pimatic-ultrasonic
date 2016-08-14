@@ -3,7 +3,7 @@ module.exports = (env) ->
   Promise = env.require 'bluebird'
   assert = env.require 'cassert'
   _ = env.require 'lodash'
-  usonic = require 'r-pi-usonic'
+  usonic = require 'mmm-usonic'
 
 
   class UltrasonicPlugin extends env.plugins.Plugin
@@ -40,27 +40,30 @@ module.exports = (env) ->
       @echo = @config.echo
       @trigger = @config.trigger
       @timeout = @config.timeout
-      @delay = @config.delay
-      @sample = @config.sample
-      @interval = @config.interval
+      # @delay = @config.delay
+      # @sample = @config.sample
+      # @interval = @config.interval
       if @config.displayUnit?
         # only change the attributes for this device:
         @attributes = _.cloneDeep(@attributes)
         @attributes.distance.displayUnit = @config.displayUnit
+      @sensor = usonic.createSensor(@echo, @trigger, @timeout)
       super()
 
       @requestValue()
       setInterval( ( => @requestValue() ), @config.interval)
 
     requestValue: ->
-      sensor = usonic.createSensor(@echo, @trigger, @timeout, @delay, @sample)
-      @_distance = (sensor() / 100)
+      @_distance = (@sensor() / 100)
       if @_distance < 0
         env.logger.error("Error reading #{@config.name} with id:#{@config.id}")
       else
         @emit "distance", @_distance
 
     getDistance: -> Promise.resolve(@_distance)
+
+    destroy: () ->
+      super()
 
   plugin = new UltrasonicPlugin
 
