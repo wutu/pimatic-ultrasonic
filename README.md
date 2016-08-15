@@ -24,7 +24,8 @@ Then add a sensor for your device to the devices section:
   "class": "Ultrasonic",
   "echo": 22,
   "trigger": 18,
-  "timeout": 750
+  "timeout": 750,
+  "interval": 60000
 }
 ```
 You can also select the unit:
