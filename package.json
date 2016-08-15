@@ -7,9 +7,10 @@
   "main": "ultrasonic",
   "files": [
     "ultrasonic.coffee",
-    "README.md",
     "ultrasonic-config-schema.coffee",
-    "device-config-schema.coffee"
+    "device-config-schema.coffee",
+    "LICENSE",
+    "README.md"
   ],
   "version": "0.9.0",
   "homepage": "http://github.com/wutu/pimatic-ultrasonic",
@@ -19,7 +20,7 @@
   },
   "configSchema": "ultrasonic-config-schema.coffee",
   "dependencies": {
-    "mmm-usonic": "~2.5.3"
+    "mmm-usonic": "^2.5.3"
   },
   "peerDependencies": {
     "pimatic": ">=0.8.0 <1.0.0"
@@ -31,16 +32,12 @@
   "bugs": {
     "url": "https://github.com/wutu/pimatic-ultrasonic/issues"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "pimatic",
     "ultrasonic",
     "sensor",
     "hc-sr04"
   ],
-  "license": "GPL-2.0",
+  "license": "AGPL-3.0",
   "readmeFilename": "README.md"
 }
