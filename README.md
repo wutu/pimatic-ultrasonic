@@ -35,3 +35,7 @@ example: "displayUnit": "cm"
 ### Credits
 
 <a href="https://github.com/mochman">Luke</a> for <a href="https://github.com/mochman/mmm-usonic">mmm-usonic</a>
+
+### License
+
+<a href="https://github.com/wutu/pimatic-ultrasonic/blob/development/LICENSE"> AGPL-3.0 </a>
