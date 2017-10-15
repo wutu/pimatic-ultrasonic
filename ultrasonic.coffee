@@ -30,6 +30,7 @@ module.exports = (env) ->
     usonic.init (error) ->
       if error
         env.logger.error("Error init HC-SR04 ultrasonic sensor")
+        env.logger.error(error)
       else
         env.logger.info("Init HC-SR04 ultrasonic sensor")
       return
