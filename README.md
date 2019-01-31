@@ -3,7 +3,7 @@ pimatic-ultrasonic
 
 <a href="https://pimatic.org">Pimatic</a> support for the HC-SR04 ultrasonic sensor.
 
-<a href="https://github.com/mochman/mmm-usonic#example">Exapmle wiring</a>
+<a href="https://github.com/mochman/mmm-usonic#example">Example wiring</a>
 
 ### Example config
 
